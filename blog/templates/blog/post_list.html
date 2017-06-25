@@ -6,20 +6,18 @@
 
 <body>
 <div>
-<h1><a href="">Jakiś tam blog</a></h1>
+<center><h1><a href="">Jakiś tam blog</a></h1></center>
 </div>
 
-<div>
-<h2>pierwszy post</h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-<p><i>published: 14.06.2014, 12:14</i></p>
-</div>
 
+{% for post in posts %}
 <div>
-<h2>drugi post</h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-<p><i>published: 15.06.2014, 11:14</i></p>
+<h2><a href="">{{ post.title }}</a></h1>
+<p>{{ post.text|linebreaksbr}}</p>
+<p><b>Author:</b> {{post.author}}<br>
+<b>Published:</b> <i> {{ post.published_date }}</i><p>
 </div>
+{% endfor %}
 
 </body>
 </html>
